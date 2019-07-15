@@ -1,0 +1,20 @@
+{
+  "name": "jest-coverage-aggregation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "npm run test:group1:coverage && mv ./coverage/coverage-final.json ./coverage/coverage-group1-final.json && npm run test:group2:coverage && mv ./coverage/coverage-final.json ./coverage/coverage-group2-final.json && node ./scripts/map-coverage.js",
+    "test:group1:coverage": "jest --testPathPattern=group1 --coverage",
+    "test:group2:coverage": "jest --testPathPattern=group2 --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "istanbul-api": "^2.1.6",
+    "istanbul-lib-coverage": "^2.0.5",
+    "jest": "^24.8.0"
+  }
+}
